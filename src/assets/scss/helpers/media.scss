@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+/*
+  미디어쿼리
+*/
+
+
+$desktop-l-width	: 1920px;
+$desktop-m-width	: 1540px;
+$desktop-s-width	: 1280px;
+$tablet-l-width		: 1024px;
+$tablet-s-width		: 767px;
+$mob-l-width		: 640px;
+$mob-m-width		: 425px;
+$mob-s-width		: 375px;
+$mob-ip5-width		: 320px;
+$mob-galaxyFold-width: 280px;
+
+
+/*                 pc                   */
+@mixin pc-lg {
+  @media screen and (max-width: #{$desktop-l-width + 1}) {
+    @content;
+  }
+}
+
+@mixin pc-md {
+  @media screen and (max-width: #{$desktop-m-width + 1}) {
+    @content;
+  }
+}
+
+@mixin pc-sm {
+  @media screen and (min-width: #{$desktop-s-width + 1}) and (max-width: #{$desktop-m-width + 1}) {
+    @content;
+  }
+}
+
+/*                 tablet                   */
+@mixin tablet {
+	@media screen and (min-width: #{$tablet-s-width + 1}) and (max-width: #{$desktop-s-width}) {
+		@content;
+	}
+}
+@mixin tablet-sm {
+	@media screen and (min-width: #{$tablet-s-width + 1}) and (max-width: #{$tablet-l-width - 1}) {
+		@content;
+	}
+}
+
+/*                 mobile                   */
+@mixin mo-lg {
+	@media screen and (max-width: #{$tablet-s-width + 1}) {
+		@content;
+	}
+}
+
+@mixin mo-m {
+	@media screen and (max-width: #{$mob-m-width}) {
+		@content;
+	}
+}
+
+@mixin mo-sm {
+	@media screen and (max-width: #{$mob-s-width}) {
+		@content;
+	}
+}
+
+@mixin mo-ip5 {
+	@media screen and (max-width: #{$mob-ip5-width}) {
+		@content;
+	}
+}
+
+@mixin mo-galaxyFold {
+	@media screen and (max-width: #{$mob-galaxyFold-width}) {
+		@content;
+	}
+}

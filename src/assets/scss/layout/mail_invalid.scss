@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+/*
+  메일 성공 & 실패 card style
+*/
+
+.failed,
+.success {
+  @include setPosition(fixed, 0, 0, 0, 0, 1001);
+  @include setFlex(flex, center, center);
+
+  > div {
+    width: 15rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    color: $black;
+    border: 2px solid $black;
+    background-color: $white;
+
+    h3 {
+      width: 6rem;
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .invalid {
+      @include font-m;
+      margin: 1rem 0;
+      text-align: center;
+    }
+  }
+}
+
+// mo
+@include mo-lg {
+  .failed,
+  .success {
+    @include setPosition(fixed, 0, 0, 0, 0, 1001);
+    @include setFlex(flex, center, center);
+
+    > div {
+      width: 10rem;
+      padding: 2rem 1rem;
+
+      h3 {
+        width: 4.5rem;
+      }
+
+      .invalid {
+        @include font-s;
+        margin: 1rem 0 2rem 0;
+      }
+    }
+  }
+}

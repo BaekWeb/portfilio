@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/*
+  about style
+*/
+.about {
+  max-width: 64rem;
+  margin: 0 auto;
+
+  .info {
+    padding: 6rem 1rem 0 1rem;
+    box-sizing: border-box;
+    text-align: right;
+
+    .title {
+      @include font-l-2;
+    }
+
+    > ul {
+      @include font-m;
+      margin: 2rem 0 0 0;
+      line-height: 1.2rem;
+    }
+  }
+}
+
+// mo 
+@include mo-lg {
+  .about {
+    .info {
+      padding: 4rem 1rem;
+  
+      .title {
+        @include font-l;
+      }
+  
+      > ul {
+        @include font-s;
+      }
+    }
+  }
+}

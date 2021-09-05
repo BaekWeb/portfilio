@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+/*
+  view style - visual 영역의 view 
+*/
+.viewSlide {
+  .viewSwiper {
+    .item {
+      width: 12.5rem;
+      height: 20rem;
+      
+      .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 0.75rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+  
+        &:hover {
+          .box {
+            &::before {
+              width: 100%;
+            }
+          }
+        }
+        
+        > a {
+          height: 100%;
+          text-indent: -10000rem;
+        }
+  
+        .box {
+          @include setPosition(absolute, auto, 0, 0, 0, 90);
+          padding: 0.5rem 1rem;
+          background-color: $black2;
+  
+          &::before {
+            @include setPosition(absolute, 0, auto, auto, 0, -1);
+            content: "";
+            width: 0;
+            height: 100%;
+            background-color: #FA3B3B;
+            transition: 1s;
+          }
+  
+          strong,
+          span {
+            display: block;
+          }
+          strong {
+            @include font-m;
+          }
+          span {
+            @include font-s;
+            margin: 0.25rem 0 0 0;
+          }
+        }
+      }
+    }
+  }
+  .viewButton {
+    @include setPosition(absolute, auto, auto, -2rem, 0, 90);
+    @include setFlex(flex, flex-start, center);
+    column-gap: 0.5rem;
+    height: 2rem;
+
+    .view_prev,
+    .view_next {
+      width: 1.2rem;
+      height: 1.2rem;
+      cursor: pointer;
+    }
+
+    .view_prev {
+      background: url('~@/assets/images/icon/prev.png') no-repeat center;
+      background-size: contain;
+    }
+    .view_next {
+      background: url('~@/assets/images/icon/next.png') no-repeat center;
+      background-size: contain;
+    }
+    .pageNumber {
+      @include font-s;
+      width: max-content;
+    }
+  }
+}
+
+// tablet
+@include tablet-sm {
+  .viewSlide {
+    padding: 1rem;
+    box-sizing: border-box;
+    .viewSwiper {
+      .item {
+        width: 6rem;
+        height: 6rem;
+        
+        .card {
+          .box {
+            display: none;
+          }
+        }
+      }
+    }
+    .viewButton {
+      display: none;
+    }
+  }
+}
+
+// mo
+@include mo-lg {
+  .viewSlide {
+    padding: 1rem;
+    box-sizing: border-box;
+    
+    .viewSwiper {
+      .item {
+        width: 3rem;
+        height: 3rem;
+        
+        .card {
+          border-radius: 100%;
+
+          .box {
+            display: none;
+          }
+        }
+      }
+    }
+    .viewButton {
+      display: none;
+    }
+  }
+}

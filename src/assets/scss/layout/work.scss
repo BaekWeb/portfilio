@@ -1,0 +1,76 @@
+@charset "utf-8";
+
+/*
+  work style
+*/
+.work {
+  padding: 6rem 0;
+
+  .content {
+    width: max-content;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+
+    .title {
+      @include font-l;
+      text-align: center;
+    }
+
+    .workBox {
+      @include setGrid(grid, 4, 1fr, auto, auto, 2rem);
+      margin: 2rem 0 0 0;
+    }
+  }
+}
+
+// tablet
+@include tablet {
+  .work {
+    .content {    
+      .workBox {
+        @include setGrid(grid, 3, 1fr, auto, auto, 2rem);
+      }
+    }
+  }
+}
+
+// tablet - sm
+@include tablet-sm {
+  .work {
+    .content {    
+      .workBox {
+        @include setGrid(grid, 2, 1fr, auto, auto, 2rem);
+      }
+    }
+  }
+}
+
+// mo
+@include mo-lg {
+  .work {
+    padding: 4rem 0;
+    
+    .content {
+      width: 100%;
+
+      .workBox {
+        @include setGrid(grid, 2, 1fr, auto, auto, 2rem);
+      }
+    }
+  }
+}
+
+@include mo-m {
+  .work {
+    padding: 4rem 0;
+    
+    .content {
+      width: 100%;
+
+      .workBox {
+        @include setGrid(grid, 1, 1fr, auto, auto, 2rem);
+      }
+    }
+  }
+}
