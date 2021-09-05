@@ -21,12 +21,12 @@
 
   ### netlify
   -문제점-
-    + github를 통한 netlify에 업로드가 되지 않는 문제
+    - github를 통한 netlify에 업로드가 되지 않는 문제
   -해결-
-    + 기존 사용한 node.js 와 vue 버전 up
+    - 기존 사용한 node.js 와 vue 버전 up
 
   ### sass
   -문제점-
-    + 업데이트 후 sass 전체에 css가 작동되지 않음
+    - 업데이트 후 sass 전체에 css가 작동되지 않음
   -해결-
-    + 기존 node-sass 에서 dart-sass로 변경
+    - 기존 node-sass 에서 dart-sass로 변경
