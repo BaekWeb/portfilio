@@ -19,14 +19,14 @@
 ## 특이사항
 -오류로 인해 github에 portfolio_vue 있는 코드를 그대로 다시 제작-
 
-  ### netlify
-  -문제점-
-    - github를 통한 netlify에 업로드가 되지 않는 문제
-  -해결-
-    - 기존 사용한 node.js 와 vue 버전 up
+### 1. netlify
+#### -문제점-
+   -github를 통한 netlify에 업로드가 되지 않는 문제
+#### -해결-
+   -기존 사용한 node.js 와 vue 버전 up
 
-  ### sass
-  -문제점-
-    - 업데이트 후 sass 전체에 css가 작동되지 않음
-  -해결-
-    - 기존 node-sass 에서 dart-sass로 변경
+### 2. sass
+#### -문제점-
+   -업데이트 후 sass 전체에 css가 작동되지 않음
+#### -해결-
+   -기존 node-sass 에서 dart-sass로 변경
