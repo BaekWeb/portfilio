@@ -8,7 +8,7 @@ export default createStore({
         name: '포트폴리오',
         title: 'Portfolio',
         sub_title: '메인페이지',
-        siteLink: 'baekweb.com',
+        siteLink: '/',
         codeLink: 'https://github.com/baekweb/portfolio_vue',
         mainImg: [
           {
