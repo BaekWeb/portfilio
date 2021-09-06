@@ -8,8 +8,8 @@ export default createStore({
         name: '포트폴리오',
         title: 'Portfolio',
         sub_title: '메인페이지',
-        siteLink: '포트폴리오 사이트링크',
-        codeLink: 'https://github.com/baek-web/portfolio_vue',
+        siteLink: 'baekweb.com',
+        codeLink: 'https://github.com/baekweb/portfolio_vue',
         mainImg: [
           {
             src: require("@/assets/images/common/portfolio.jpg"),
@@ -24,8 +24,8 @@ export default createStore({
         name: '한솥',
         title: 'Hansot',
         sub_title: '메인페이지',
-        siteLink: 'https://baek-web.github.io/hansot/',
-        codeLink: 'https://github.com/baek-web/hansot',
+        siteLink: 'https://baekweb.github.io/hansot/',
+        codeLink: 'https://github.com/baekweb/hansot',
         mainImg: [
           {
             src: require('@/assets/images/common/hansot.jpg'),
@@ -40,8 +40,8 @@ export default createStore({
         name: '렛츠코레일',
         title: 'lets Korail',
         sub_title: '메인페이지',
-        siteLink: 'https://baek-web.github.io/korail/',
-        codeLink: 'https://github.com/baek-web/korail',
+        siteLink: 'https://baekweb.github.io/korail/',
+        codeLink: 'https://github.com/baekweb/korail',
         mainImg: [
           {
             src: require('@/assets/images/common/letkorail.jpg'),
@@ -56,8 +56,8 @@ export default createStore({
         name: '이케아',
         title: 'Ikea',
         sub_title: '메인페이지',
-        siteLink: 'https://baek-web.github.io/ikea/',
-        codeLink: 'https://github.com/baek-web/ikea',
+        siteLink: 'https://baekweb.github.io/ikea/',
+        codeLink: 'https://github.com/baekweb/ikea',
         mainImg: [
           {
             src: require('@/assets/images/common/ikea.jpg'),

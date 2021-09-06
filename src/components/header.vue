@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :style="{ backgroundColor: bgColor}">
     <div class="content">
       <h1 class="logo">
         <a href="#">
@@ -25,6 +25,8 @@ export default {
   data() {
     return {
       toggle: false,
+      limitscroll: 200,
+      bgColor: ""
     }
   },
   components: {
@@ -33,8 +35,24 @@ export default {
   methods: {
     menuToggle(menuClose) {
       this.toggle = menuClose;
-    }
+    },
+    headerScroll() {
+      var scrollTop = window.scrollY;
+
+      if (scrollTop < this.limitscroll) {
+        this.bgColor = "transparent"
+      } else {
+        this.bgColor = "#121212"
+      }
+    },
+  },
+  created() {
+      window.addEventListener('scroll', this.headerScroll);
+  },
+  destroyed() {
+      window.removeEventListener('scroll', this.headerScroll);
   }
+
 }
 </script>
 

@@ -62,7 +62,7 @@ export default {
               iconAlt: '깃허브 가기',
             },
           ],
-          link: 'https://github.com/baek-web'
+          link: 'https://github.com/baekweb'
         }
       ]
     }

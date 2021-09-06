@@ -9,7 +9,7 @@
           <article class="gnb">
             <ul>
               <li v-for="site in site" :key="site">
-                <a :href="site.link">
+                <router-link :to="{name: 'Home', hash: site.id}" @click="menuClose" >
                   <strong>
                     {{site.name}}
                     
@@ -18,7 +18,7 @@
                     </span>
                   </strong>
                   <span>{{site.subText}}</span>
-                </a>
+                </router-link>
               </li>
             </ul>
           </article>
@@ -48,24 +48,28 @@ export default {
     return {
       site: [
         {
+          id: "#home",
           name: 'Home',
           subText: 'Go Home',
-          link: '#'
+          link: '/'
         },
         {
+          id: "#pro",
           name: 'Profile',
           subText: 'Go Profile',
-          link: '#'
+          link: '/'
         },
         {
+          id: "#skill",
           name: 'Skill',
           subText: 'Go Skill',
-          link: '#'
+          link: '/'
         },
         {
+          id: "#work",
           name: 'Work',
           subText: 'Go Work',
-          link: '#'
+          link: '/'
         }
       ],
       icon: [
@@ -73,7 +77,7 @@ export default {
           name: 'github',
           src: require('@/assets/images/icon/github_b.png'),
           alt: '깃허브 바로가기',
-          link: 'https://github.com/baek-web'
+          link: 'https://github.com/baekweb'
         },
         {
           name: 'facebook',
@@ -94,7 +98,7 @@ export default {
     menuClose() {
       this.$emit("menuClose", !this.toggle);
     },
-  }
+  }, 
 }
 </script>
 

@@ -1,10 +1,10 @@
 <template>
-  <div class="card" 
+  <div class="card"
   :style="{
     backgroundImage: 'url(' + workItem.mainImg[0].src + ')',
     backgroundPosition: workItem.mainImg[0].position +'%'
   }">  
-    <a :href="workItem.siteLink">
+    <a :href="workItem.siteLink" target="_blank">
       <span>한솥 바로가기</span>
     </a>
 
