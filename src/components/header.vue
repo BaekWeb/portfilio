@@ -2,9 +2,9 @@
   <header class="header" :style="{ backgroundColor: bgColor}">
     <div class="content">
       <h1 class="logo">
-        <a href="#">
+        <router-link to="/">
           <img src="@/assets/images/icon/logo.png" alt="로고">
-        </a>
+        </router-link>
       </h1>
 
       <ul class="burgerMenu" @click="menuToggle">
@@ -40,7 +40,7 @@ export default {
       var scrollTop = window.scrollY;
 
       if (scrollTop < this.limitscroll) {
-        this.bgColor = "transparent"
+        this.bgColor = ""
       } else {
         this.bgColor = "#121212"
       }

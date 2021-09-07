@@ -31,9 +31,9 @@
         </li>
         <li>
           <div>
-            <a :href="workCard.siteLink">
+            <router-link to="/Port">
               <img src="@/assets/images/icon/info_w.png" alt="사이트 정보보기">
-            </a>
+            </router-link>
           </div>
           <span>Info</span>
         </li>
