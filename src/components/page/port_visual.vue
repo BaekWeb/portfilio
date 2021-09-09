@@ -2,16 +2,15 @@
   <section class='port_visual'>
     <article class="main">
       <div>
-        <h2 class="name">Hansot</h2>
-        <strong class="title">한솥을 그대로 가져오다</strong>
+        <h2 class="name">{{workCard[index].name}}</h2>
+        <strong class="title">{{workCard[index].siteIntro[0].intro_main}}</strong>
         <p>
-          한솥 메인페이지를 캡처와 이미지를 가져온 후 <br>
-          나만의 코드로 다시 재현한 웹 사이트.
+          {{workCard[index].siteIntro[0].intro_sub}}
         </p>
 
         <ul class="icon">
           <li>
-            <a href="">
+            <a :href="workCard[index].siteLink">
               <i>
                 <img src="@/assets/images/icon/home_w.png" alt="사이트가기">
               </i>
@@ -19,7 +18,7 @@
             </a>
           </li>
           <li>
-            <a href="">
+            <a :href="workCard[index].codeLink">
               <i>
                 <img src="@/assets/images/icon/github_w.png" alt="코드보러가기">
               </i>
@@ -32,25 +31,17 @@
     <article class="siteInfo">
       <div>
         <ul class="info">
-          <li>
-            <strong>분류</strong>
-            <span>클론코딩</span>
-          </li>
-          <li>
-            <strong>제작년도</strong>
-            <span>2020</span>
-          </li>
-          <li>
-            <strong>제작기간</strong>
-            <span>약 2주</span>
-          </li>
-          <li>
-            <strong>기여도</strong>
-            <span>퍼블리싱 100 %</span>
+          <li v-for="infomation in workCard[index].infomation" :key="infomation">
+            <strong>{{infomation.info_name}}</strong>
+            <span>{{infomation.info_text}}</span>
           </li>
         </ul>
         <div class="siteImg">
-          <img src="@/assets/images/common/hansot.jpg" alt="한솥이미지">
+          <img 
+          :src="workCard[index].mainImg[0].src"
+          :alt="workCard[index].mainImg[0].alt"
+          :style="{transform: workCard[index].mainImg[0].transform}"
+          >
         </div>
       </div>
     </article>
@@ -59,7 +50,21 @@
 
 <script>
 export default {
+  props: ['workCard'],
+  data() {
+    return {
+      index: 0,
+      paramsId: this.$route.params.id
+    }
+  },
+  created() {
+    for (let i = 0; i < this.workCard.length; i++) {
 
+      if (this.paramsId == this.workCard[i].id) {
+        this.index = i
+      }
+    }
+  }
 }
 </script>
 
@@ -83,11 +88,11 @@ export default {
       .title {
         @include font-l;
         display: block;
-
       }
       > p {
         @include font-m;
         margin: 2rem 0;
+        white-space: pre-line;
       }
 
       .icon {
@@ -145,13 +150,16 @@ export default {
 
       .siteImg {
         @include setPosition(absolute, auto, 0, 0, auto, 999);
-        
+        width: 12.5rem;
+        height: 20rem;
+        border-radius: 0.75rem;
+        box-shadow: 4px 4px 4px $black2;
+        overflow: hidden;
+
         img {
-          width: 12.5rem;
-          height: 20rem;
-          border-radius: 0.75rem;
-          box-shadow: 4px 4px 4px $black2;
-          object-fit: cover;
+          @include setPosition(absolute, 50%, auto, auto, 50%, 999);
+          width: auto;
+          height: 100%;
         }
       }
     }
@@ -187,11 +195,15 @@ export default {
         }
 
         .siteImg {
-          position: static;
+          position: relative;
+          width: 80%;
+          height: 100px;
+          padding: 30% 0;
           
           img {
-            width: 80%;
-            height: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
         }
       }

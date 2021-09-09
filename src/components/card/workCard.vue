@@ -31,7 +31,7 @@
         </li>
         <li>
           <div>
-            <router-link to="/Port">
+            <router-link :to="'/Port/' + workCard.id">
               <img src="@/assets/images/icon/info_w.png" alt="사이트 정보보기">
             </router-link>
           </div>

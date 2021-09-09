@@ -3,21 +3,29 @@
     <h2 class="title">
       사이트소개
     </h2>
-    <p>
-      Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit.
-      
-      Ipsa quaerat commodi consectetur similique
-      mollitia beatae dolor veritatis atque,
-      rerum excepturi vero quia quae eius repellat a molestias
-      quo unde corporis.
+    <p v-for="siteAbout in workCard[index].siteIntro[0].intro_text" :key="siteAbout">
+      {{siteAbout.text}}
     </p>
   </section>
 </template>
 
 <script>
 export default {
+  props: ['workCard'],
+  data() {
+    return {
+      index: 0,
+      paramsId: this.$route.params.id
+    }
+  },
+  created() {
+    for (let i = 0; i < this.workCard.length; i++) {
 
+      if (this.paramsId == this.workCard[i].id) {
+        this.index = i
+      }
+    }
+  }
 }
 </script>
 
@@ -39,6 +47,7 @@ export default {
     width: 25rem;
     margin-top: 1rem;
     line-height: 2rem;
+    white-space: pre-line;
   }
 }
 
@@ -49,7 +58,9 @@ export default {
     background-color: #fbfbfb;
 
     p {
+      @include font-s;
       width: 100%;
+      white-space: normal;
     }
   }
 }

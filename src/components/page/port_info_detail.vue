@@ -1,31 +1,23 @@
 <template>
   <section class="info_detail">
     <div class="content">
-      <h2 class="name">한솥</h2>
-      <strong class="title">메인페이지</strong>
+      <h2 class="name">{{workCard[index].name}}</h2>
+      <strong class="title">{{workCard[index].sub_title}}</strong>
 
       <dl>
         <dt>font</dt>
-        <dd>" 맑은 고딕 "</dd>
+        <dd>{{workCard[index].font}}</dd>
         <dt>color</dt>
         <dd>
           <ol>
-            <li>
-              <h3>1</h3>
-              <span>2</span>
-            </li>
-            <li>
-              <h3>1</h3>
-              <span>2</span>
-            </li>
-            <li>
-              <h3>1</h3>
-              <span>2</span>
+            <li v-for="color in workCard[index].color[0]" :key="color">
+              <h3 :style="{backgroundColor: color}"></h3>
+              <span>{{color}}</span>
             </li>
           </ol>
         </dd>
         <dt>address</dt>
-        <dd>https://baekweb.github.io/hansot</dd>
+        <dd><a :href="workCard[index].siteLink">{{workCard[index].siteLink}}</a></dd>
       </dl>
     </div>
   </section>
@@ -33,7 +25,21 @@
 
 <script>
 export default {
+  props: ['workCard'],
+  data() {
+    return {
+      index: 0,
+      paramsId: this.$route.params.id,
+    }
+  },
+  created() {
+    for (let i = 0; i < this.workCard.length; i++) {
 
+      if (this.paramsId == this.workCard[i].id) {
+        this.index = i
+      }
+    }
+  }
 }
 </script>
 
@@ -76,12 +82,13 @@ export default {
 
         ol {
           @include setFlex(flex, center, center);
-          gap: 2rem;
+          gap: 1rem;
 
           li {
             h3 {
               width: 24px;
               height: 24px;
+              margin: 0 auto;
               border: 1px solid $white;
               border-radius: 100%;
               box-sizing: border-box;

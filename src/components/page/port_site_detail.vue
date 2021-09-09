@@ -3,54 +3,70 @@
     <div class="content">
       <h2 class="title">사이트설명</h2>
 
-      <ul class="boxs">
-        <li class="item">
-          <div class="web_img">
-            <img src="@/assets/images/common/hansot_header.jpg" alt="">
-          </div>
-          <div class="web_text">
-            <h3>Header</h3>
-            <ul>
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-            </ul>
-          </div>
-        </li>
-        <li class="item">
-          <div class="web_img">
-            <img src="@/assets/images/common/hansot_visual.jpg" alt="">
-          </div>
-          <div class="web_text">
-            <h3>Visual</h3>
-            <ul>
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-            </ul>
-          </div>
-        </li>
-        <li class="item">
-          <div class="web_img">
-            <img src="@/assets/images/common/hansot_content.jpg" alt="">
-          </div>
-          <div class="web_text">
-            <h3>Content</h3>
-            <ul>
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-            </ul>
-          </div>
-        </li>
-      </ul>
+      <div class="boxs">
+        <img :src="workCard[index].siteExplanation[0].siteWeb_src" alt="">
+        
+        <ul>
+          <li class="item"
+          v-for="(webSite, i) in workCard[index].siteExplanation[0].item"
+          :key="webSite"
+          :style="{
+            top: webSite.spot[0].top, left: webSite.spot[0].left}"
+          @click="drop(i)"
+          >
+            <transition name="fade">
+              <div class="drop"
+              :style="{
+                top: webSite.drop[0].top,
+                right: webSite.drop[0].right,
+                bottom: webSite.drop[0].bottom,
+                left: webSite.drop[0].left
+                }"
+              v-show="number == i"
+              >
+                <h3>{{webSite.name}}</h3>
+
+                <ul>
+                  <li v-for="(text) in webSite.drop[0].text[0]" :key="text">
+                    {{text}}
+                  </li>
+                </ul>
+              </div>
+            </transition>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 export default {
+  props: ['workCard'],
+  data() {
+    return {
+      index: 0,
+      paramsId: this.$route.params.id,
+      number: null,
+    }
+  },
+  methods: {
+    drop(i) {
+      if (this.number == i) {
+        this.number = null
+      } else {
+        this.number = i;
+      }
+    },
+  },
+  created() {
+    for (let i = 0; i < this.workCard.length; i++) {
 
+      if (this.paramsId == this.workCard[i].id) {
+        this.index = i
+      }
+    }
+  },
 }
 </script>
 
@@ -69,32 +85,75 @@ export default {
     }
 
     .boxs {
+      position: relative;
       margin: 1rem 0 0 0;
+      width: 100%;
+      
+      img {
+        width: 100%;
+      }
 
-      .item {
-        @include setFlex(flex, center, flex-start);
-        gap: 20px;
-        margin-bottom: 20px;
+      ul .item {
+        @include setPosition(absolute, auto, auto, auto, auto, 999);
+        width: 32px;
+        height: 32px;
+        border: 2px solid $white;
+        border-radius: 100%;
+        background-color: $main;
+        cursor: pointer;
+        
+        &::after {
+          @include setPosition(absolute, 50%, auto, auto, 50%, 999);
+          transform: translate(-50%, -50%) rotate(45deg);
+          display: block;
+          content: "";
+          width: 20px;
+          height: 20px;
+          background: url("~@/assets/images/icon/close.png") no-repeat center;
+          background-size: cover;
+          transition: 0.5s;
+        }
 
-        .web_img {
-          flex: 1;
-          
-          img {
-            width: 100%;
+        &:hover,
+        &.open {
+          &::after {
+            transform: translate(-50%, -50%);
           }
         }
-        .web_text {
-          width: 300px;
+
+        .drop {
+          @include setPosition(absolute, auto, auto, auto, auto, 999);
+          width: 200px;
+          min-height: 250px;
+          padding: 20px;
+          box-sizing: border-box;
+          border-radius: 15px;
+          color: $white;
+          background-color: $black2;
+
+          &.fade-enter-active, .fade-leave-active {
+            transition: opacity .5s;
+          }
+          &.fade-enter, .fade-leave-to {
+            opacity: 0;
+          }
 
           h3 {
             @include font-l;
           }
-          ul li {
-            @include font-m;
-            margin: 1rem 0 0 0;
+
+          ul {
+            @include font-s;
+            margin-top: 1rem;
+
+            li {
+              margin: 10px 0 0 15px;
+              list-style: auto;
+            }
           }
         }
       }
+
     }
   }
 }
