@@ -4,11 +4,11 @@
       <h2 class="title">사이트설명</h2>
 
       <div class="boxs">
-        <img :src="workCard.siteExplanation[0].siteWeb_src" alt="">
+        <img :src="workCard[index].siteExplanation[0].siteWeb_src" alt="">
         
         <ul>
           <li class="item"
-          v-for="webSite in workCard.siteExplanation[0].item"
+          v-for="webSite in workCard[index].siteExplanation[0].item"
           :key="webSite"
           >
             <Spot :webSite="webSite"/>
@@ -24,8 +24,22 @@ import Spot from "./spot.vue";
 
 export default {
   props: ['workCard'],
+  data() {
+    return {
+      index: 0,
+      paramsId: parseInt(this.$route.params.id),
+    }
+  },
   components: {
     Spot
+  },
+  created() {
+    for (let i = 0; i < this.workCard.length; i++) {
+
+      if (this.paramsId == this.workCard[i].id) {
+        this.index = i
+      }
+    }
   },
 }
 </script>

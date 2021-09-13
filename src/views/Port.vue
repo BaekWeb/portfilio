@@ -1,10 +1,10 @@
 <template>
   <div class="port">
     <Header/>
-    <PortVisual :workCard="workCard[index]"/>
-    <PortSiteIntro :workCard="workCard[index]"/>
-    <PortInfoDetail :workCard="workCard[index]"/>
-    <PortSiteDetail :workCard="workCard[index]"/>
+    <PortVisual :workCard="workCard"/>
+    <PortSiteIntro :workCard="workCard"/>
+    <PortInfoDetail :workCard="workCard"/>
+    <PortSiteDetail :workCard="workCard"/>
 
     <section class="button">
       <ul>
@@ -36,7 +36,6 @@ export default {
   name: 'Port',
   data() {
     return {
-      index: 0,
       paramsId: parseInt(this.$route.params.id),
     }
   },
@@ -63,14 +62,6 @@ export default {
         return this.paramsId + 1
       } else {
         return 1
-      }
-    }
-  },
-  created() {
-    for (let i = 0; i < this.workCard.length; i++) {
-
-      if (this.paramsId == this.workCard[i].id) {
-        this.index = i
       }
     }
   },
