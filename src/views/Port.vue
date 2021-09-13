@@ -65,17 +65,6 @@ export default {
       }
     }
   },
-  // params의 변경을 감지후 다시 렌더링
-  watch: {
-    $route(to, form) {
-      if (to.params.id !== form.params.id) {
-        if (to.hash == "") {
-          this.$router.go();
-        }
-      }
-
-    },
-  },
 }
 </script>
 
