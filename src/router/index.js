@@ -11,7 +11,7 @@ const routes = [
   {
     path: '/port/:id',
     name: 'Port',
-    component: Port
+    component: Port,
   },
 ]
 
@@ -19,10 +19,7 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior (to, from, savedPosition) {
-    // console.log(savedPosition);
-    if (savedPosition) {
-      return savedPosition
-    } else if (to.hash) {
+    if (to.hash) {
       // console.log(to.hash);
       const options = {
         top: document.querySelector(to.hash).offsetTop,
@@ -30,7 +27,8 @@ const router = createRouter({
       }
       window.scrollTo(options)
     } else {
-      return {x: 0, y: 0}
+      // console.log(top);
+      return {top: 0, left: 0}
     }
   }
 })

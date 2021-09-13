@@ -1,18 +1,22 @@
 <template>
   <div class="port">
     <Header/>
-    <PortVisual :workCard="workCard"/>
-    <PortSiteIntro :workCard="workCard"/>
-    <PortInfoDetail :workCard="workCard"/>
-    <PortSiteDetail :workCard="workCard"/>
+    <PortVisual :workCard="workCard[index]"/>
+    <PortSiteIntro :workCard="workCard[index]"/>
+    <PortInfoDetail :workCard="workCard[index]"/>
+    <PortSiteDetail :workCard="workCard[index]"/>
 
     <section class="button">
       <ul>
-        <li @click="prev">
-            Prev
+        <li class="prev">
+          <router-link :to="`/Port/` + prev">
+            이전
+          </router-link>
         </li>
-        <li @click="next">
-            Next
+        <li class="next">
+          <router-link :to="`/Port/` + next">
+            다음
+          </router-link>
         </li>
       </ul>
     </section>
@@ -33,7 +37,7 @@ export default {
   data() {
     return {
       index: 0,
-      paramsId: parseInt(this.$route.params.id)
+      paramsId: parseInt(this.$route.params.id),
     }
   },
   components: {
@@ -46,26 +50,19 @@ export default {
   computed: {
     workCard() {
       return this.$store.state.work.page;
-    }
-  },
-  methods: {
+    },
     prev() {
-
       if (this.paramsId <= 1) {
-        this.paramsId = this.workCard.length
-        console.log(this.paramsId);
+        return this.workCard.length
       } else {
-        this.paramsId = this.paramsId - 1
-        console.log(this.paramsId);
+        return this.paramsId - 1
       }
     },
     next() {
       if (this.paramsId < this.workCard.length) {
-        this.paramsId = this.paramsId + 1
-        console.log(this.paramsId);
+        return this.paramsId + 1
       } else {
-        this.paramsId = 1
-        console.log(this.paramsId);
+        return 1
       }
     }
   },
@@ -77,8 +74,52 @@ export default {
       }
     }
   },
+  // params의 변경을 감지후 다시 렌더링
+  watch: {
+    $route(to, form) {
+      if (to.params.id !== form.params.id) {
+        if (to.hash == "") {
+          this.$router.go();
+        }
+      }
+
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
+@import "~@/assets/scss/main.scss";
+
+.button {
+  color: $white;
+  background-color: $black;
+
+  > ul {
+    @include setFlex(flex, space-between, center);
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 1rem 1rem;
+    box-sizing: border-box;
+
+    > li {
+      @include font-m;
+
+      &:hover {
+        &::after {
+          width: 0%;
+          transition: 0.5s;
+        }
+      }
+
+      &::after {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 3px;
+        background-color: $white;
+      }
+    }
+  }
+}
 </style>

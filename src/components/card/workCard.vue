@@ -1,12 +1,10 @@
 <template>
   <article class="workCard">
     <div class="mainImg">
-      <a :href="workCard.siteLink">
-        <img
-        :src="workCard.mainImg[0].src"
-        :alt="workCard.mainImg[0].alt"
-        :style="{transform: workCard.mainImg[0].transform}">
-      </a>
+      <img
+      :src="workCard.mainImg[0].src"
+      :alt="workCard.mainImg[0].alt"
+      :style="{transform: workCard.mainImg[0].transform}">
     </div>
 
     <div class="backContent">
@@ -106,11 +104,8 @@ export default {
           margin: 0 auto;
           box-sizing: border-box;
 
-          a {
-            display: block;
-            > img {
-              width: 100%;
-            }
+          img {
+            width: 100%;
           }
         }
 

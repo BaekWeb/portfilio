@@ -3,7 +3,7 @@
     <h2 class="title">
       사이트소개
     </h2>
-    <p v-for="siteAbout in workCard[index].siteIntro[0].intro_text" :key="siteAbout">
+    <p v-for="siteAbout in workCard.siteIntro[0].intro_text" :key="siteAbout">
       {{siteAbout.text}}
     </p>
   </section>
@@ -12,20 +12,6 @@
 <script>
 export default {
   props: ['workCard'],
-  data() {
-    return {
-      index: 0,
-      paramsId: this.$route.params.id
-    }
-  },
-  created() {
-    for (let i = 0; i < this.workCard.length; i++) {
-
-      if (this.paramsId == this.workCard[i].id) {
-        this.index = i
-      }
-    }
-  }
 }
 </script>
 

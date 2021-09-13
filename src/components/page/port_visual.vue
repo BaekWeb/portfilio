@@ -2,15 +2,15 @@
   <section class='port_visual'>
     <article class="main">
       <div>
-        <h2 class="name">{{workCard[index].name}}</h2>
-        <strong class="title">{{workCard[index].siteIntro[0].intro_main}}</strong>
+        <h2 class="name">{{workCard.name}}</h2>
+        <strong class="title">{{workCard.siteIntro[0].intro_main}}</strong>
         <p>
-          {{workCard[index].siteIntro[0].intro_sub}}
+          {{workCard.siteIntro[0].intro_sub}}
         </p>
 
         <ul class="icon">
           <li>
-            <a :href="workCard[index].siteLink">
+            <a :href="workCard.siteLink">
               <i>
                 <img src="@/assets/images/icon/home_w.png" alt="사이트가기">
               </i>
@@ -18,7 +18,7 @@
             </a>
           </li>
           <li>
-            <a :href="workCard[index].codeLink">
+            <a :href="workCard.codeLink">
               <i>
                 <img src="@/assets/images/icon/github_w.png" alt="코드보러가기">
               </i>
@@ -31,16 +31,16 @@
     <article class="siteInfo">
       <div>
         <ul class="info">
-          <li v-for="infomation in workCard[index].infomation" :key="infomation">
+          <li v-for="infomation in workCard.infomation" :key="infomation">
             <strong>{{infomation.info_name}}</strong>
             <span>{{infomation.info_text}}</span>
           </li>
         </ul>
         <div class="siteImg">
           <img 
-          :src="workCard[index].mainImg[0].src"
-          :alt="workCard[index].mainImg[0].alt"
-          :style="{transform: workCard[index].mainImg[0].transform}"
+          :src="workCard.mainImg[0].src"
+          :alt="workCard.mainImg[0].alt"
+          :style="{transform: workCard.mainImg[0].transform}"
           >
         </div>
       </div>
@@ -51,20 +51,6 @@
 <script>
 export default {
   props: ['workCard'],
-  data() {
-    return {
-      index: 0,
-      paramsId: this.$route.params.id
-    }
-  },
-  created() {
-    for (let i = 0; i < this.workCard.length; i++) {
-
-      if (this.paramsId == this.workCard[i].id) {
-        this.index = i
-      }
-    }
-  }
 }
 </script>
 
@@ -73,8 +59,8 @@ export default {
 
 .port_visual {
   .main {
-    color: #ffffff;
-    background-color: #121212;
+    color: $white;
+    background-color: $black;
 
     > div {
       max-width: 64rem;
@@ -182,7 +168,7 @@ export default {
           padding: 1rem 0;
 
           li {
-            width: 100px;
+            width: 5rem;
 
             strong {
               @include font-m;
@@ -197,12 +183,10 @@ export default {
         .siteImg {
           position: relative;
           width: 80%;
-          height: 100px;
+          height: 5rem;
           padding: 30% 0;
           
           img {
-            width: 100%;
-            height: 100%;
             object-fit: cover;
           }
         }

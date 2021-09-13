@@ -1,23 +1,23 @@
 <template>
   <section class="info_detail">
     <div class="content">
-      <h2 class="name">{{workCard[index].name}}</h2>
-      <strong class="title">{{workCard[index].sub_title}}</strong>
+      <h2 class="name">{{workCard.name}}</h2>
+      <strong class="title">{{workCard.sub_title}}</strong>
 
       <dl>
         <dt>font</dt>
-        <dd>{{workCard[index].font}}</dd>
+        <dd>{{workCard.font}}</dd>
         <dt>color</dt>
         <dd>
           <ol>
-            <li v-for="color in workCard[index].color[0]" :key="color">
+            <li v-for="color in workCard.color[0]" :key="color">
               <h3 :style="{backgroundColor: color}"></h3>
               <span>{{color}}</span>
             </li>
           </ol>
         </dd>
         <dt>address</dt>
-        <dd><a :href="workCard[index].siteLink">{{workCard[index].siteLink}}</a></dd>
+        <dd><a :href="workCard.siteLink">{{workCard.siteLink}}</a></dd>
       </dl>
     </div>
   </section>
@@ -26,20 +26,6 @@
 <script>
 export default {
   props: ['workCard'],
-  data() {
-    return {
-      index: 0,
-      paramsId: this.$route.params.id,
-    }
-  },
-  created() {
-    for (let i = 0; i < this.workCard.length; i++) {
-
-      if (this.paramsId == this.workCard[i].id) {
-        this.index = i
-      }
-    }
-  }
 }
 </script>
 
@@ -55,7 +41,7 @@ export default {
 
   .content {
     padding: 4rem 0;
-    border-radius: 15px;
+    border-radius: 0.75rem;
     text-align: center;
     color: $white;
     background-color: $black;
@@ -86,18 +72,18 @@ export default {
 
           li {
             h3 {
-              width: 24px;
-              height: 24px;
+              width: 1.2rem;
+              height: 1.2rem;
               margin: 0 auto;
               border: 1px solid $white;
               border-radius: 100%;
               box-sizing: border-box;
-              text-indent: -10000px;
+              text-indent: -10000rem;
               background-color: $white;
             }
             span {
               display: inline-block;
-              margin-top: 5px;
+              margin-top: 0.25rem;
             }
           }
         }
