@@ -1,20 +1,19 @@
 <template>
   <div class="port">
     <Header/>
-    <PortVisual :workCard="workCard"/>
-    <PortSiteIntro :workCard="workCard"/>
-    <PortInfoDetail :workCard="workCard"/>
-    <PortSiteDetail :workCard="workCard"/>
-
+    <PortVisual :workCard="workCard[pageIdx]"/>
+    <PortSiteIntro :workCard="workCard[pageIdx]"/>
+    <PortInfoDetail :workCard="workCard[pageIdx]"/>
+    <PortSiteDetail :workCard="workCard[pageIdx]"/>
     <section class="button">
       <ul>
         <li class="prev">
-          <router-link :to="`/Port/` + prev">
+          <router-link :to="{name: 'Port', params: {id: prev}}">
             이전
           </router-link>
         </li>
         <li class="next">
-          <router-link :to="`/Port/` + next">
+          <router-link :to="{name: 'Port', params: {id: next}}">
             다음
           </router-link>
         </li>
@@ -36,7 +35,7 @@ export default {
   name: 'Port',
   data() {
     return {
-      paramsId: parseInt(this.$route.params.id),
+      index: 0,
     }
   },
   components: {
@@ -50,16 +49,24 @@ export default {
     workCard() {
       return this.$store.state.work.page;
     },
+    pageIdx() {
+      for (let i = 0; i < this.workCard.length; i++) {
+
+        if (this.$route.params.id == this.workCard[i].id) {
+          return this.index = i
+        }
+      }
+    },
     prev() {
-      if (this.paramsId <= 1) {
+      if (this.$route.params.id <= 1) {
         return this.workCard.length
       } else {
-        return this.paramsId - 1
+        return this.$route.params.id - 1
       }
     },
     next() {
-      if (this.paramsId < this.workCard.length) {
-        return this.paramsId + 1
+      if (this.$route.params.id < this.workCard.length) {
+        return parseInt(this.$route.params.id) + 1
       } else {
         return 1
       }

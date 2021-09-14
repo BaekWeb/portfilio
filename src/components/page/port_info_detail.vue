@@ -1,23 +1,23 @@
 <template>
   <section class="info_detail">
     <div class="content">
-      <h2 class="name">{{workCard[index].name}}</h2>
-      <strong class="title">{{workCard[index].sub_title}}</strong>
+      <h2 class="name">{{workCard.name}}</h2>
+      <strong class="title">{{workCard.sub_title}}</strong>
 
       <dl>
         <dt>font</dt>
-        <dd>{{workCard[index].font}}</dd>
+        <dd>{{workCard.font}}</dd>
         <dt>color</dt>
         <dd>
           <ol>
-            <li v-for="color in workCard[index].color[0]" :key="color">
+            <li v-for="color in workCard.color[0]" :key="color">
               <h3 :style="{backgroundColor: color}"></h3>
               <span>{{color}}</span>
             </li>
           </ol>
         </dd>
         <dt>address</dt>
-        <dd><a :href="workCard[index].siteLink">{{workCard[index].siteLink}}</a></dd>
+        <dd><a :href="workCard.siteLink">{{workCard.siteLink}}</a></dd>
       </dl>
     </div>
   </section>
@@ -26,20 +26,6 @@
 <script>
 export default {
   props: ['workCard'],
-  data() {
-    return {
-      index: 0,
-      paramsId: parseInt(this.$route.params.id),
-    }
-  },
-  created() {
-    for (let i = 0; i < this.workCard.length; i++) {
-
-      if (this.paramsId == this.workCard[i].id) {
-        this.index = i
-      }
-    }
-  },
 }
 </script>
 
