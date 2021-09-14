@@ -29,8 +29,6 @@ import PortSiteIntro from "@/components/page/port_site_intro.vue";
 import PortInfoDetail from "@/components/page/port_info_detail.vue";
 import PortSiteDetail from "@/components/page/port_site_detail.vue";
 
-
-
 export default {
   name: 'Port',
   data() {

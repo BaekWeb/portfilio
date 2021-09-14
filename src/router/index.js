@@ -30,7 +30,7 @@ const router = createRouter({
       // console.log(top);
       return {top: 0, left: 0}
     }
-  }
+  },
 })
 
 export default router
