@@ -30,7 +30,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.load = !this.load;
-    }, 3000);
+    }, 2000);
   },
   watch: {
     $route(to, from) {
@@ -39,7 +39,7 @@ export default {
 
         setTimeout(() => {
           this.load = !this.load;
-        }, 5000);
+        }, 2000);
       }
     }
   }

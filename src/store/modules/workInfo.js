@@ -979,6 +979,276 @@ export default createStore({
           },
         ]
       },
+      {
+        id: 5,
+        name: '광주광역시교육청',
+        title: 'Office_of_Education',
+        sub_title: '메인페이지',
+        font: '"Noto Sans KR"',
+        siteLink: 'https://baekweb.github.io/Gwangju-Office_of_Education/',
+        codeLink: 'https://github.com/BaekWeb/Gwangju-Office_of_Education',
+        color: [
+          {
+            mainColor: '#1954A4',
+            subColor_01: '#4A78B6',
+            subColor_02: '#ff8e20',
+          }
+        ],
+        mainImg: [
+          {
+            src: require('@/assets/images/common/Gwanju.jpg'),
+            alt: '광주광역시교육청 가기',
+            position: 50,
+            transform: 'translate(-50%, -50%)'
+          }
+        ],
+        infomation: [
+          {
+            info_name: '분류',
+            info_text: '클론코딩',
+          },
+          {
+            info_name: '제작년도',
+            info_text: '2021',
+          },
+          {
+            info_name: '제작기간',
+            info_text: '5일',
+          },
+          {
+            info_name: '기여도',
+            info_text: '퍼블리싱 100%',
+          },
+        ],
+        siteIntro: [
+          {
+            intro_main: `광주광역시 교육청을 그대로...`,
+            intro_sub: `광주광역시 교육청 PC사이트를 그대로 재현.
+            `,
+            intro_text: [
+              {
+                text: `기존의 광주광역시 교육청의 웹의 특징은 많은 슬라이드 사용과
+                탭바에 있다고 생각합니다.`
+              },
+              {
+                text: `기존의 웹과 오차가 있다는 점이 아쉬운 점이라고 생각하지만
+                기존 광주광역시 교육청을 제대로 잘 구현했다고 생각하며,`
+              },
+              {
+                text: `탭바 기능을 그대로 구현을 잘했다고 생각한 웹입니다.`
+              },
+            ]
+          }
+        ],
+        siteExplanation: [
+          {
+            siteWeb_src: require("@/assets/images/common/Gwangju_web.png"),
+            siteWeb_alt: '광주광역시 교육청 웹 전체 캡쳐 이미지',
+            item: [
+              {
+                name: 'Header',
+                spot: [
+                  {
+                    top: '1%',
+                    left: '50%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: '100%',
+                    right: '',
+                    bottom: 'auto',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: 'dropdown 구현',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Zoom',
+                spot: [
+                  {
+                    top: '6%',
+                    left: '30%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: '100%',
+                    bottom: '100%',
+                    left: 'auto',
+                    text: [
+                      {
+                        text01: '클릭시 확대 & 축소 구현',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Visual',
+                spot: [
+                  {
+                    top: '18%',
+                    left: '40%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: '100%',
+                    right: 'auto',
+                    bottom: 'auto',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: 'Visual slide',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Card-Slide',
+                spot: [
+                  {
+                    top: '29%',
+                    left: '84%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: '100%',
+                    right: '100%',
+                    bottom: 'auto',
+                    left: 'auto',
+                    text: [
+                      {
+                        text01: 'gif 확장자로 인한 slide 구조',
+                        text02: '버튼클릭시 slide 기능',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Notice',
+                spot: [
+                  {
+                    top: '38%',
+                    left: '53%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: 'auto',
+                    bottom: '100%',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: '탭바 기능',
+                        text02: '각 탭바에 slide 기능',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'QuickMenu',
+                spot: [
+                  {
+                    top: '57%',
+                    left: '73%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: '100%',
+                    bottom: '100%',
+                    left: 'auto',
+                    text: [
+                      {
+                        text01: 'slide 기능 구현',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Service',
+                spot: [
+                  {
+                    top: '68%',
+                    left: '53%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: 'auto',
+                    bottom: '100%',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: '탭바 구현 - 2중 구조',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Banner',
+                spot: [
+                  {
+                    top: '86%',
+                    left: '28%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: 'auto',
+                    bottom: '100%',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: '그룹 slide 구현',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Footer',
+                spot: [
+                  {
+                    top: '94%',
+                    left: '79%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: '100%',
+                    bottom: '100%',
+                    left: 'auto',
+                    text: [
+                      {
+                        text01: 'Footer영역',
+                      }
+                    ],
+                  }
+                ],
+              },
+            ]
+          },
+        ]
+      },
     ]
   },
   mutations: {
