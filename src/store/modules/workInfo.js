@@ -1249,6 +1249,327 @@ export default createStore({
           },
         ]
       },
+      {
+        id: 6,
+        name: '스타벅스',
+        title: 'starbucks',
+        sub_title: '메인페이지',
+        font: '"Mulish, NanumBarunGothic, Malgun Gothic"',
+        siteLink: 'https://baekweb.github.io/starbucks/',
+        codeLink: 'https://github.com/BaekWeb/starbucks',
+        color: [
+          {
+            mainColor: '#1e3932',
+            subColor_01: '#64a70b',
+            subColor_02: '#669900',
+          }
+        ],
+        mainImg: [
+          {
+            src: require('@/assets/images/common/starbucks-gd059d5011_1920.jpg'),
+            alt: '스타벅스 바로가기',
+            position: 50,
+            transform: 'translate(-50%, -50%)'
+          }
+        ],
+        infomation: [
+          {
+            info_name: '분류',
+            info_text: '클론코딩',
+          },
+          {
+            info_name: '제작년도',
+            info_text: '2021',
+          },
+          {
+            info_name: '제작기간',
+            info_text: '7일',
+          },
+          {
+            info_name: '기여도',
+            info_text: '퍼블리싱 100%',
+          },
+        ],
+        siteIntro: [
+          {
+            intro_main: `유동적으로 이미지를 표현하다`,
+            intro_sub: `반응형에따라 이미지를 유동적으로 조절하고
+            스크롤을 활용하여 애니메이션 효과를 적용한 웹.
+            `,
+            intro_text: [
+              {
+                text: `스타벅스의 웹은 텍스트를 이미지로 제작 및 이미지가
+                디바이스의 너비에 맞게 유동적으로 변환한다는 장점이 있다.`
+              },
+              {
+                text: `이러한 점으로 인해 다양한 디바이스에 맞게 모든요소가
+                변화하여 모든 디바이스에 효과적으로 보여줄 수 있다는 장점을 가진웹이다.`
+              },
+              {
+                text: `기존의 디자인을 그대로 구현하되 스크롤이벤트 및 이미지의 유동성을
+                그대로 구축하였으며 텍스트이미지 부분을 텍스트로 변경하여 제작하였다.
+                스타벅스의 웹을 통해 부족했던 이미지 처리 문제에 대한 css 를 보완할 수 있었다.`
+              },
+            ]
+          }
+        ],
+        siteExplanation: [
+          {
+            siteWeb_src: require("@/assets/images/common/starbucks_web.png"),
+            siteWeb_alt: '스타벅스 웹 전체 캡쳐 이미지',
+            item: [
+              {
+                name: 'Header',
+                spot: [
+                  {
+                    top: '1%',
+                    left: '35%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: '100%',
+                    right: '',
+                    bottom: 'auto',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: 'dropdown 구현',
+                        text02: '모바일 사이드메뉴',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Visual',
+                spot: [
+                  {
+                    top: '6%',
+                    left: '30%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: '100%',
+                    right: '',
+                    bottom: 'auto',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: '반응형에 따른 유동적인 이미지구현',
+                        text01: 'keyflame 애니메이션 효과',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'News & Promotion',
+                spot: [
+                  {
+                    top: '18%',
+                    left: '49%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: '100%',
+                    right: 'auto',
+                    bottom: 'auto',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: '뉴스 스크롤링',
+                        text02: '프로모션 slideDown & slideUp',
+                        text03: '프로모션 스와이프 슬라이드',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Rewards',
+                spot: [
+                  {
+                    top: '22%',
+                    left: '77%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: '100%',
+                    right: '100%',
+                    bottom: 'auto',
+                    left: 'auto',
+                    text: [
+                      {
+                        text01: '리워드 영역',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Bean',
+                spot: [
+                  {
+                    top: '32%',
+                    left: '35%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: 'auto',
+                    bottom: '100%',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: '슬라이드 애니메이션',
+                        text02: 'pc 와 mobile의 애니메이션효과 따로 적용',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Reserve',
+                spot: [
+                  {
+                    top: '43%',
+                    left: '73%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: '100%',
+                    bottom: '100%',
+                    left: 'auto',
+                    text: [
+                      {
+                        text01: '슬라이드 애니메이션',
+                        text02: 'pc 와 mobile의 애니메이션효과 따로 적용',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Favorite',
+                spot: [
+                  {
+                    top: '57%',
+                    left: '33%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: 'auto',
+                    bottom: '100%',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: '슬라이드 애니메이션',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Magazeine',
+                spot: [
+                  {
+                    top: '72%',
+                    left: '28%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: 'auto',
+                    bottom: '100%',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: '슬라이드 애니메이션',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Store',
+                spot: [
+                  {
+                    top: '79%',
+                    left: '79%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: '100%',
+                    bottom: '100%',
+                    left: 'auto',
+                    text: [
+                      {
+                        text01: '슬라이드 애니메이션',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'FooterMenu',
+                spot: [
+                  {
+                    top: '89%',
+                    left: '33%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: 'auto',
+                    bottom: '100%',
+                    left: '100%',
+                    text: [
+                      {
+                        text01: 'mobile 에서만 dropdown',
+                      }
+                    ],
+                  }
+                ],
+              },
+              {
+                name: 'Awards',
+                spot: [
+                  {
+                    top: '94%',
+                    left: '85%',
+                  }
+                ],
+                drop: [
+                  {
+                    top: 'auto',
+                    right: '100%',
+                    bottom: '100%',
+                    left: 'auto',
+                    text: [
+                      {
+                        text01: 'pc를 제외한 디바이스에서 slide',
+                      }
+                    ],
+                  }
+                ],
+              },
+            ]
+          },
+        ]
+      },
     ]
   },
   mutations: {
